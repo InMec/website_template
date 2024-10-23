@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<title>Vicente González</title>
+<style>
+    body {
+        background-color: rgb(255, 255, 255);
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    #image-slider {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+	 align-items: center;
+    }
+
+    img {
+        width: auto;
+        max-height: 100vh;
+    }
+
+    #buttons-container {
+        position: fixed;
+        top: 2vh;
+        right: 4vh;
+    }
+
+    button {
+        background-color: #FF5200;
+        color: black;
+        padding: 10px;
+        border: 1vh;
+        margin-left: 1vh;
+        cursor: pointer;
+        width: 10vh; /* Fixed width */
+    }
+#prev-button,#next-button,#down-button {
+    font-size: 3vh; /* Set the fixed icon size */
+}
+
+</style>
+</head>
+<body>
+
+<div id="image-slider">
+    <img src="images/out-01.png">
+    <img src="images/out-02.png">
+    <img src="images/out-03.png">
+    <img src="images/out-04.png">
+    <img src="images/out-05.png">
+    <img src="images/out-06.png">
+    <img src="images/out-07.png">
+    <img src="images/out-08.png">
+    <img src="images/out-09.png">
+    <img src="images/out-10.png">
+    <img src="images/out-11.png">
+    <img src="images/out-12.png">
+    <img src="images/out-13.png">
+    <img src="images/out-14.png">
+    <img src="images/out-15.png">
+    <img src="images/out-16.png">
+    <img src="images/out-18.png">
+    <img src="images/out-19.png">
+    <img src="images/out-20.png">
+</div>
+
+
+<div id="buttons-container">
+      <button id="prev-button"><i class="fas fa-arrow-left"></i></button>
+    <button id="next-button"><i class="fas fa-arrow-right"></i></button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('#image-slider img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        images.forEach((image, i) => {
+            if (i === index) {
+                image.style.display = 'block';
+            } else {
+                image.style.display = 'none';
+            }
+        });
+    }
+
+    document.getElementById('prev-button').addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    });
+
+    document.getElementById('next-button').addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft') {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        } else if (event.key === 'ArrowRight') {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+    });
+
+    // Show the first image initially
+    showImage(currentIndex);
+});
+</script>
+
+</body>
+</html>
+
