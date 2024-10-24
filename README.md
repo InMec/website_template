@@ -28,15 +28,16 @@ There are tutorials made by github in the url "https://pages.github.com/". If yo
 
 - Install git
 - Open a git terminal
-- Copy the website template to your pc using: https://github.com/InMec/website_template.git
-- Replace the images with your presentation slides
+- Copy the website template to your pc using: git clone https://github.com/InMec/website_template.git
+- A folder was created, go to it and replace the images with your presentation slides
 - Create a Github account
 - Create a repository named your_username.github.io
-- Copy your website to your pc using: https://github.com/your_username/your_username.github.io
-- Go inside the website folder using: cd your_username.github.io
-- Open a folder manager and replace the images inside presentations1/images with your presentation slides.
+- Copy your website to your pc using: git clone https://github.com/your_username/your_username.github.io
+- A folder was created, go to it and copy the website template inside it
+- Open a git termial and go the folder using: cd your_username.github.io
 - Run the next code in the git terminal: git add --all ; git commit -m "Initial commit" ; git push -u git@github.com:your_username/your_username.io.git main
-- If you are in windows enter to your new github account
+- If you are in windows access your new github account
+
 - If you are in linux open a new terminal and run: ssh-keygen -t ed25519 -C inmec@aol.com  
 - Find the ssh-key generated inside the folder ~/.ssh, it has ".pub" format.
 - Acces your github account and register the ssh-key
