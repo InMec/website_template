@@ -35,13 +35,10 @@ There are tutorials made by github in the url "https://pages.github.com/". If yo
 - Copy your website to your pc using: git clone https://github.com/your_username/your_username.github.io
 - A folder was created, go to it and copy the website template inside it
 - Open a git termial and go the folder using: cd your_username.github.io
-- Run the next code in the git terminal: git add --all ; git commit -m "Initial commit" ; git push -u git@github.com:your_username/your_username.io.git main
-- If you are in windows access your new github account
-
-- If you are in linux open a new terminal and run: ssh-keygen -t ed25519 -C inmec@aol.com  
-- Find the ssh-key generated inside the folder ~/.ssh, it has ".pub" format.
-- Acces your github account and register the ssh-key
-- Go back to the git terminal, cancel the runnig code with crtl+c, and run: ssh -T git@github.com  
 - Add your email by running: git config --global user.email "your_email"  
 - Add your name by running: git config --global user.email "your_name"  
+- Create a shh-keypen by running: ssh-keygen -t ed25519 -C your_email
+- Find the ssh-key generated inside the folder ~/.ssh/, it has ".pub" format.
+- Acces your github account, go to settings and register the ssh-key
+- Go back to the git terminal and run: ssh -T git@github.com  
 - Run the next code in the git terminal: git add --all ; git commit -m "Initial commit" ; git push -u git@github.com:your_username/your_username.io.git main
